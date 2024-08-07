@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1558636508-e0db3814bd1d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .center-box {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #no-button {
+            position: absolute;
+        }
+        #yes-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #image-container {
+            display: none;
+            text-align: center;
+        }
+        #proposal-image {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-box">
+        <p>Happy Birthday 🧸, will you marry me?</p>
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+    </div>
+    <div id="image-container">
+        <a href="https://ibb.c0/Xsq2J4v"><img src="https://i.ibb.co/4THmNf5/IMG-5891.jpg" border="0"></a>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no-button');
+        const yesButton = document.getElementById('yes-button');
+        const imageContainer = document.getElementById('image-container');
+
+        noButton.addEventListener('mouseover', moveButton);
+
+        yesButton.addEventListener('click', () => {
+            imageContainer.style.display = 'block';
+        });
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
